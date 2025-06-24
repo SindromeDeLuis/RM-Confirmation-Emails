@@ -53,7 +53,7 @@ export default async ({ req, res, log, error }) => {
           Ya estás participando oficialmente en nuestra rifa.
       </p>
       <p class="text-gray-600 mb-6">
-          Has comprado los siguientes boletos:
+          Has comprado los siguientes números:
       </p>
       <p class="text-gray-600 mb-6">
         ${ticketsHTML}
