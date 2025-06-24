@@ -113,6 +113,7 @@ export default async ({ req, res, log, error }) => {
               Ver Detalles del Pago
           </a>
           <br>
+          <br>
           <a href="https://www.ganaconmarin.com/rifa/${req.bodyJson.raffleId}" 
              class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
               Intentar Nueva Compra
