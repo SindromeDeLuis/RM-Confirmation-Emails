@@ -26,7 +26,7 @@ export default async ({ req, res, log, error }) => {
 
   if (req.bodyJson.status == 'aprobado') {
     let ticketsHTML = '<p>';
-    req.bodyJason.raffleTickets.forEach(element => {
+    req.bodyJson.raffleTickets.forEach(element => {
       ticketsHTML += `
         <b style="border-radius:4px;background:green;color:white;padding:5px 8px;font-size:18pt;">${element}</b>
       `;
