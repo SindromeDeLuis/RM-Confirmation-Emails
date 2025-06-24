@@ -1,10 +1,11 @@
 {
-  "name": "starter-template",
+  "name": "resend-appwrite-email",
   "version": "1.0.0",
   "description": "",
   "main": "src/main.js",
   "type": "module",
   "scripts": {
+    "start": "node src/main.js",
     "format": "prettier --write ."
   },
   "dependencies": {
