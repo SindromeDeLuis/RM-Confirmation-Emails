@@ -25,6 +25,13 @@ export default async ({ req, res, log, error }) => {
   }
 
   if (req.bodyJson.status == 'aprobado') {
+    let ticketsHTML = '<p>';
+    req.bodyJason.raffleTickets.forEach(element => {
+      ticketsHTML += `
+        <b style="border-radius:4px;background:green;color:white;padding:5px 8px;font-size:18pt;">${element}</b>
+      `;
+    });
+    ticketsHTML += '</p>';
     const data = await resend.emails.send({
       from: 'non-reply@ganaconmarin.com',
       to: [req.bodyJson.email],
@@ -45,7 +52,13 @@ export default async ({ req, res, log, error }) => {
           Tu pago con la referencia: ${req.bodyJson.paymentReference} ha sido aprobado exitosamente.
       </p>
       <p class="text-gray-600 mb-6">
-          Ya estás participando oficialmente en nuestra rifa.<br>
+          Ya estás participando oficialmente en nuestra rifa.
+      </p>
+      <p class="text-gray-600 mb-6">
+          Has comprado los siguientes boletos:
+      </p>
+      ${ticketsHTML}
+      <p class="text-gray-600 mb-6">
           Puedes ver los detalles de tu participación aquí:
       </p>
       <a href="https://www.ganaconmarin.com/payment-info/${req.bodyJson.paymentId}" 
