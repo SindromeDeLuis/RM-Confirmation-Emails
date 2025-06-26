@@ -47,7 +47,7 @@ export default async ({ req, res, log, error }) => {
       <h1 class="text-3xl font-bold text-green-600 mb-4">¡Pago Aprobado!</h1>
       <p class="text-gray-600 mb-6">
           ¡Excelentes noticias ${req.bodyJson.name}!<br>
-          Tu pago con la referencia: ${req.bodyJson.paymentReference} ha sido aprobado exitosamente.
+          Tu pago con la referencia: <b>${req.bodyJson.paymentReference}</b> para la rifa <b>${req.bodyJson.raffleName}</b> ha sido aprobado exitosamente.
       </p>
       <p class="text-gray-600 mb-6">
           Ya estás participando oficialmente en nuestra rifa.
@@ -102,7 +102,7 @@ export default async ({ req, res, log, error }) => {
       <h1 class="text-3xl font-bold text-red-600 mb-4">Pago Rechazado</h1>
       <p class="text-gray-600 mb-6">
           Estimado ${req.bodyJson.name},<br>
-          Lamentamos informarte que tu pago con la referencia: ${req.bodyJson.paymentReference} ha sido rechazado.
+          Lamentamos informarte que tu pago con la referencia: <b>${req.bodyJson.paymentReference}</b> para la rifa <b>${req.bodyJson.raffleName}</b> ha sido rechazado.
       </p>
       <p class="text-gray-600 mb-6">
           No te preocupes, puedes intentar nuevamente con otro método de pago o registrar una nueva compra:
