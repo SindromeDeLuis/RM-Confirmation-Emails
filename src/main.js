@@ -26,9 +26,14 @@ export default async ({ req, res, log, error }) => {
 
   if (req.bodyJson.status == 'aprobado') {
     let ticketsHTML = '';
-    req.bodyJson.raffleTickets.forEach(element => {
+    /*req.bodyJson.raffleTickets.forEach(element => {
       ticketsHTML += `
         <b style="border-radius:4px;background:green;color:white;padding:5px 8px;font-size:18pt;">${element}</b>`;
+    });*/
+    req.bodyJson.raffleTickets.forEach(element => {
+      const formattedElement = String(element).padStart(4, '0');
+      ticketsHTML += `
+        <b style="border-radius:4px;background:green;color:white;padding:5px 8px;font-size:18pt;">${formattedElement}</b>`;
     });
     const data = await resend.emails.send({
       from: 'non-reply@ganaconmarin.com',
